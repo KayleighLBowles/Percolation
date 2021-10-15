@@ -12,7 +12,8 @@ from matplotlib import pyplot as plt
 from random import random
 from scipy import stats
 
-# Didnt need to do this by hand!!! numpy can make an array of random bools
+"""
+Didnt need to do this by hand!!! numpy can make an array of random bools
 
 def createLattice(size, prob):     # size must be an integer, prob must be a float 0<prob<1
   lattice = np.zeros([size+1,size+1])
@@ -21,6 +22,11 @@ def createLattice(size, prob):     # size must be an integer, prob must be a flo
     states = np.random.rand(size+1)
     row[(states<= prob)] = 1
     row[(states>prob)] = 0 
+  return lattice
+ """
+
+def createLattice(size,prob):
+  lattice = np.random.binomial(1,prob,[size,size])
   return lattice
 
 def showLattice(size,prob):
